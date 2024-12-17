@@ -1,21 +1,26 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
+  preload: true,
 });
+
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "/fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+  preload: true,
 });
 
 export const metadata: Metadata = {
-  title: "Class 10",
-  description: "Class Assigment by Shahroz",
+  title: "Class 12",
+  description: "Class Assignment by Shahroz",
 };
 
 export default function RootLayout({
@@ -25,10 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
