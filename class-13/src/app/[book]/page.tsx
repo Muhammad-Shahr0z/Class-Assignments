@@ -34,6 +34,8 @@ const Page = ({ params }: any) => {
     }
   };
 
+  
+  
   useEffect(() => {
     fetchBookDetails();
   }, []);
